@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KX6-mN-Pbe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task Table View Controller-->
+        <scene sceneID="RBn-6a-dWJ">
+            <objects>
+                <tableViewController id="KX6-mN-Pbe" customClass="TaskTableViewController" customModule="Tasker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dg4-jI-kHY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="zYJ-Ub-tcM">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="uKz-xO-vJ7">
+                                    <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.left" catalog="system" id="6ly-ET-YzY">
+                                        <connections>
+                                            <action selector="backToParentTask:" destination="KX6-mN-Pbe" id="ShS-cH-QMs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="k36-Q6-SbC">
+                                        <connections>
+                                            <action selector="appendNewTask:" destination="KX6-mN-Pbe" id="HJp-tF-dQD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="43.5" id="DNx-IL-Zo8" customClass="TaskCell" customModule="Tasker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DNx-IL-Zo8" id="Bqi-2S-WxN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJG-l8-Un1">
+                                            <rect key="frame" x="20" y="12" width="314" height="19.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="kzC-VL-0jp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny1-VF-gDr">
+                                            <rect key="frame" x="354" y="11.5" width="40" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="040-kk-jZW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MJG-l8-Un1" firstAttribute="centerY" secondItem="Bqi-2S-WxN" secondAttribute="centerY" id="26Q-hI-pCu"/>
+                                        <constraint firstItem="MJG-l8-Un1" firstAttribute="top" secondItem="Bqi-2S-WxN" secondAttribute="top" constant="12" id="49b-B1-0CD"/>
+                                        <constraint firstAttribute="bottom" secondItem="MJG-l8-Un1" secondAttribute="bottom" constant="12" id="LI4-NB-a40"/>
+                                        <constraint firstItem="ny1-VF-gDr" firstAttribute="leading" secondItem="MJG-l8-Un1" secondAttribute="trailing" constant="20" id="LpX-rF-7AZ"/>
+                                        <constraint firstItem="ny1-VF-gDr" firstAttribute="centerY" secondItem="MJG-l8-Un1" secondAttribute="centerY" id="MGl-vY-o3v"/>
+                                        <constraint firstItem="MJG-l8-Un1" firstAttribute="leading" secondItem="Bqi-2S-WxN" secondAttribute="leading" constant="20" id="pBg-Mv-TzV"/>
+                                        <constraint firstAttribute="trailing" secondItem="ny1-VF-gDr" secondAttribute="trailing" constant="20" id="tlY-mM-SLG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="subtaskCountLabel" destination="ny1-VF-gDr" id="Roo-AF-wcR"/>
+                                    <outlet property="taskNameLabel" destination="MJG-l8-Un1" id="WQf-G3-X7q"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KX6-mN-Pbe" id="ScT-f4-Sg3"/>
+                            <outlet property="delegate" destination="KX6-mN-Pbe" id="oUO-Ps-3xF"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="backButton" destination="6ly-ET-YzY" id="Qa4-N0-L1w"/>
+                        <outlet property="navbar" destination="uKz-xO-vJ7" id="Zp9-cw-TVF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5t-tW-iJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
